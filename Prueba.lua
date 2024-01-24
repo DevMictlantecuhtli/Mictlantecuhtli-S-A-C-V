@@ -1,1 +1,733 @@
-local a=tonumber;local b=string.byte;local c=string.char;local d=string.sub;local e=string.gsub;local f=string.rep;local g=table.concat;local h=table.insert;local h=math.ldexp;local i=getfenv or function()return _ENV end;local j=setmetatable;local k=pcall;local k=select;local l=unpack or table.unpack;local m=tonumber;local function m(i,m,...)local n=1;local o;i=e(d(i,5),"..",function(e)if(b(e,2)==79)then o=a(d(e,1,1))return""else local a=c(a(e,16))if o then local a=f(a,o)o=nil;return a else return a end end end)local function a(a,b,c)if c then local a=(a/(2^(b-1)))%(2^(((c-1)-(b-1))+1))return a-(a%1)else local b=2^(b-1)return(((a%(b+b))>=b)and 1)or 0 end end;local function e()local a=b(i,n,n)n=n+1;return a end;local function f()local a,b=b(i,n,n+2)n=n+2;return(b*256)+a end;local function o()local a,b,c,d=b(i,n,n+3)n=n+4;return(d*16777216)+(c*65536)+(b*256)+a end;local function p()local b=o()local c=o()local d=1;local b=(a(c,1,20)*(2^32))+b;local e=a(c,21,31)local a=((a(c,32)==1)and-1)or 1;if(e==0)then if(b==0)then return a*0 else e=1;d=0 end elseif(e==2047)then return((b==0)and(a*(1/0)))or(a*NaN)end;return h(a,e-1023)*(d+(b/(2^52)))end;local function h(a)local e;if not a then a=o()if(a==0)then return""end end;e=d(i,n,(n+a)-1)n=n+a;local a={}for f=1,#e do a[f]=c(b(d(e,f,f)))end;return g(a)end;local b=o;local function b(...)return{...},k("#",...)end;local function c()local b={}local d={}local g={}local g={b,d,nil,g}local i=o()local j={}for a=1,i do local b=e()local c;if(b==1)then c=e()~=0 elseif(b==2)then c=p()elseif(b==3)then c=h()end;j[a]=c end;g[3]=e()for c=1,o()do local d=e()if(a(d,1,1)==0)then local e=a(d,2,3)local d=a(d,4,6)local g={f(),f(),nil,nil}if(e==0)then g[3]=f()g[4]=f()elseif(e==1)then g[3]=o()elseif(e==2)then g[3]=o()-(65536)elseif(e==3)then g[3]=o()-(65536)g[4]=f()end;if(a(d,1,1)==1)then g[2]=j[g[2]]end;if(a(d,2,2)==1)then g[3]=j[g[3]]end;if(a(d,3,3)==1)then g[4]=j[g[4]]end;b[c]=g end end;for a=1,o()do d[a-1]=c()end;return g end;local function a(c,d,e)local f=c[1]local g=c[2]local c=c[3]return function(...)local f=f;local g=g;local c=c;local b=b;local h=1;local i=-1local m={}local n={...}local k=k("#",...)-1;local o={}local p={}for a=0,k do if(a>=c)then m[a-c]=n[a+1]else p[a]=n[a+1]end end;local c=(k-c)+1;local c;local k;while true do c=f[h]k=c[1]if(k<=60)then if(k<=29)then if(k<=14)then if(k<=6)then if(k<=2)then if(k<=0)then p[c[2]]=c[3]+p[c[4]]elseif(k==1)then local a=c[2]p[a](l(p,a+1,i))else p[c[2]]=p[c[3]][c[4]]end elseif(k<=4)then if(k>3)then local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]else local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]m=c[2]do return p[m](l(p,m+1,c[3]))end;h=h+1;c=f[h]m=c[2]do return l(p,m,i)end;h=h+1;c=f[h]do return end end elseif(k==5)then local a;local d,e;local g;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g](l(p,g+1,i))h=h+1;c=f[h]h=c[3]elseif(c[2]==p[c[4]])then h=h+1 else h=c[3]end elseif(k<=10)then if(k<=8)then if(k>7)then local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]p[c[2]]=c[3]else local a=c[2]p[a]=p[a](p[a+1])end elseif(k==9)then p[c[2]]=p[c[3]]else p[c[2]][c[3]]=p[c[4]]end elseif(k<=12)then if(k==11)then local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local d,g;local j;local k;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]end elseif(k>13)then p[c[2]]=p[c[3]]%p[c[4]]else local a;p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]a=c[2]p[a](l(p,a+1,c[3]))h=h+1;c=f[h]for a=c[2],c[3]do p[a]=nil end;h=h+1;c=f[h]do return p[c[2]]end;h=h+1;c=f[h]h=c[3]end elseif(k<=21)then if(k<=17)then if(k<=15)then local b=g[c[3]]local g;local i={}g=j({},{__index=function(a,a)local a=i[a]return a[1][a[2]]end,__newindex=function(a,a,b)local a=i[a]a[1][a[2]]=b end})for a=1,c[4]do h=h+1;local b=f[h]if(b[1]==9)then i[a-1]={p,b[3]}else i[a-1]={d,b[3]}end;o[#o+1]=i end;p[c[2]]=a(b,g,e)elseif(k>16)then p[c[2]]=c[3]else local a=c[2]do return p[a](l(p,a+1,c[3]))end end elseif(k<=19)then if(k==18)then local a;p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]if(p[c[2]]==p[c[4]])then h=h+1 else h=c[3]end else local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k>20)then p[c[2]][c[3]]=c[4]else local a=c[2]p[a](l(p,a+1,c[3]))end elseif(k<=25)then if(k<=23)then if(k==22)then local a;local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]g,j=b(p[m](p[m+1]))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]g={p[m](l(p,m+1,i))}a=0;for b=m,c[4]do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]h=c[3]else local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]~=0 end elseif(k>24)then local a;local g,j;local k;local m;p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]elseif p[c[2]]then h=h+1 else h=c[3]end elseif(k<=27)then if(k==26)then local a;local e,g;local j;local k;k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]e,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]k=c[2]p[k](l(p,k+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]else p[c[2]]=p[c[3]][p[c[4]]]end elseif(k>28)then local a;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]a=c[2]p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=44)then if(k<=36)then if(k<=32)then if(k<=30)then if not p[c[2]]then h=h+1 else h=c[3]end elseif(k>31)then p[c[2]]={}else local a;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]if p[c[2]]then h=h+1 else h=c[3]end end elseif(k<=34)then if(k>33)then local a;local e,g;local j;local k;k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]e,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]k=c[2]p[k](l(p,k+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]end elseif(k>35)then local a;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local g,j;local k;local m;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]~=0;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]end elseif(k<=40)then if(k<=38)then if(k==37)then local a;local d,e;local g;g=c[2]p[g](l(p,g+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]p[g]=p[g](p[g+1])h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,c[3]))h=h+1;c=f[h]p[c[2]]={}h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,c[3]))h=h+1;c=f[h]p[c[2]][p[c[3]]]=c[4]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,c[3]))h=h+1;c=f[h]p[c[2]][p[c[3]]]=c[4]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]p[g]=p[g](l(p,g+1,c[3]))h=h+1;c=f[h]p[c[2]][p[c[3]]]=c[4]else p[c[2]][p[c[3]]]=c[4]end elseif(k==39)then if(p[c[2]]==p[c[4]])then h=h+1 else h=c[3]end else local a;e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]end elseif(k<=42)then if(k==41)then local a;local d,g;local j;local k;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,c[3]))h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end else p[c[2]]=p[c[3]]+c[4]end elseif(k==43)then local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,i))h=h+1;c=f[h]do return end else if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]do return end end elseif(k<=52)then if(k<=48)then if(k<=46)then if(k==45)then local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,i))h=h+1;c=f[h]do return end else local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k>47)then local a=c[2]local b=p[a+2]local d=p[a]+b;p[a]=d;if(b>0)then if(d<=p[a+1])then h=c[3]p[a+3]=d end elseif(d>=p[a+1])then h=c[3]p[a+3]=d end else local a;local b;local d;p[c[2]]={}h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=#p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]d=c[2]b=p[d]a=p[d+2]if(a>0)then if(b>p[d+1])then h=c[3]else p[d+3]=b end elseif(b<p[d+1])then h=c[3]else p[d+3]=b end end elseif(k<=50)then if(k==49)then local a=c[2]local b={p[a](l(p,a+1,i))}local d=0;for a=a,c[4]do d=d+1;p[a]=b[d]end else local a=c[2]local b=p[c[3]]p[a+1]=b;p[a]=b[c[4]]end elseif(k==51)then do return end else local a;local b;b=c[2]p[b](l(p,b+1,c[3]))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]b=c[2]a=p[c[3]]p[b+1]=a;p[b]=a[c[4]]h=h+1;c=f[h]b=c[2]p[b]=p[b](p[b+1])h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]b=c[2]a=p[c[3]]p[b+1]=a;p[b]=a[c[4]]end elseif(k<=56)then if(k<=54)then if(k>53)then local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]h=c[3]else local a=c[2]p[a]=p[a]()end elseif(k>55)then local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]~=0 else local a=c[2]local b,c=b(p[a](l(p,a+1,c[3])))i=(c+a)-1;local c=0;for a=a,i do c=c+1;p[a]=b[c]end end elseif(k<=58)then if(k==57)then p[c[2]]=#p[c[3]]else local a;local d,g;local j;local k;k=c[2]p[k]=p[k](l(p,k+1,c[3]))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]end elseif(k==59)then local a=c[2]local b=c[4]local d=a+2;local a={p[a](p[a+1],p[d])}for b=1,b do p[d+b]=a[b]end;local a=a[1]if a then p[d]=a;h=c[3]else h=h+1 end else local a;local d,e;local g;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g](l(p,g+1,i))h=h+1;c=f[h]h=c[3]end elseif(k<=90)then if(k<=75)then if(k<=67)then if(k<=63)then if(k<=61)then local a;local g,j;local k;local m;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]~=0;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]h=c[3]elseif(k>62)then local a;local e,g;local j;local k;k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]e,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]k=c[2]p[k](l(p,k+1,c[3]))h=h+1;c=f[h]h=c[3]else local a=c[2]local b={p[a](p[a+1])}local d=0;for a=a,c[4]do d=d+1;p[a]=b[d]end end elseif(k<=65)then if(k==64)then local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=c[3]else for a=c[2],c[3]do p[a]=nil end end elseif(k==66)then local a=c[2]local b,c=b(p[a](p[a+1]))i=(c+a)-1;local c=0;for a=a,i do c=c+1;p[a]=b[c]end else local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]~=0 end elseif(k<=71)then if(k<=69)then if(k>68)then if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]do return end else if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]if not p[c[2]]then h=h+1 else h=c[3]end end elseif(k>70)then p[c[2]]=c[3]~=0 else local a;a=c[2]p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))end elseif(k<=73)then if(k==72)then local a=c[2]do return l(p,a,i)end else local a;local d,e;local g;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]g=c[2]d,e=b(p[g](l(p,g+1,c[3])))i=(e+g)-1;a=0;for b=g,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]g=c[2]p[g](l(p,g+1,i))end elseif(k==74)then local a;local d,g;local j;local k;k=c[2]p[k](l(p,k+1,c[3]))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]else local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=82)then if(k<=78)then if(k<=76)then local a;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a](p[a+1])h=h+1;c=f[h]p[c[2]]=c[3]elseif(k==77)then local a;p[c[2]][p[c[3]]]=c[4]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]][p[c[3]]]=c[4]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))else local a=c[2]local b=p[a]local d=p[a+2]if(d>0)then if(b>p[a+1])then h=c[3]else p[a+3]=b end elseif(b<p[a+1])then h=c[3]else p[a+3]=b end end elseif(k<=80)then if(k>79)then local a;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]a=c[2]p[a](l(p,a+1,c[3]))h=h+1;c=f[h]h=c[3]elseif(p[c[2]]==c[4])then h=h+1 else h=c[3]end elseif(k==81)then local a;local d,g;local j;local k;k=c[2]p[k](p[k+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]else local a;p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a](p[a+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if(p[c[2]]==c[4])then h=h+1 else h=c[3]end end elseif(k<=86)then if(k<=84)then if(k>83)then local a;local e,g;local j;local k;k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]e,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]do return p[c[2]]end;h=h+1;c=f[h]h=c[3]else local a;local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]g,j=b(p[m](p[m+1]))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]g={p[m](l(p,m+1,i))}a=0;for b=m,c[4]do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]h=c[3]end elseif(k>85)then local a;p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a](p[a+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if(p[c[2]]==c[4])then h=h+1 else h=c[3]end else local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=88)then if(k>87)then h=c[3]else local a;local g,j;local k;local m;p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k==89)then local a;local e,g;local j;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]+c[4]h=h+1;c=f[h]j=c[2]e,g=b(p[j](l(p,j+1,c[3])))i=(g+j)-1;a=0;for b=j,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]j=c[2]p[j]=p[j](l(p,j+1,i))h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=#p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]%p[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]+p[c[4]]h=h+1;c=f[h]p[c[2]]=#p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]%p[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]+p[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]+c[4]h=h+1;c=f[h]j=c[2]e,g=b(p[j](l(p,j+1,c[3])))i=(g+j)-1;a=0;for b=j,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]j=c[2]e,g=b(p[j](l(p,j+1,i)))i=(g+j)-1;a=0;for b=j,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]j=c[2]p[j]=p[j](l(p,j+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]]%c[4]h=h+1;c=f[h]j=c[2]e,g=b(p[j](p[j+1]))i=(g+j)-1;a=0;for b=j,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]j=c[2]p[j](l(p,j+1,i))else local a=c[2]p[a]=p[a](l(p,a+1,c[3]))end elseif(k<=105)then if(k<=97)then if(k<=93)then if(k<=91)then if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end elseif(k==92)then local a;p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]a=c[2]p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]else local a;local g,j;local k;local m;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]~=0;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=95)then if(k>94)then local a;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]e[c[3]]=p[c[2]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a](p[a+1])h=h+1;c=f[h]p[c[2]]=c[3]else local a;local e,g;local j;local k;k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]e,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=e[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]k=c[2]p[k](l(p,k+1,c[3]))h=h+1;c=f[h]h=c[3]end elseif(k==96)then local a;a=c[2]p[a]=p[a]()h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]][c[3]]=c[4]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end else local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](p[m+1])h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]h=c[3]end elseif(k<=101)then if(k<=99)then if(k==98)then local a;local b;b=c[2]a=p[c[3]]p[b+1]=a;p[b]=a[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]~=0;h=h+1;c=f[h]b=c[2]p[b](l(p,b+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]]+c[4]h=h+1;c=f[h]h=c[3]else local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]~=0 end elseif(k==100)then local a=c[2]p[a]=p[a](l(p,a+1,i))else local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=103)then if(k>102)then local a;p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]a=c[2]p[a]=p[a](p[a+1])h=h+1;c=f[h]p[c[2]][c[3]]=p[c[4]]h=h+1;c=f[h]h=c[3]else p[c[2]]=d[c[3]]end elseif(k>104)then local a=c[2]p[a](p[a+1])else local a;local g,j;local k;local m;m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]p[m](p[m+1])h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=113)then if(k<=109)then if(k<=107)then if(k>106)then local a;local g,j;local k;local m;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][p[c[4]]]h=h+1;c=f[h]p[c[2]]=c[3]else e[c[3]]=p[c[2]]end elseif(k==108)then local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k<=111)then if(k==110)then local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]={}h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]else local a;local g,j;local k;local m;p[c[2]]=c[3]h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=d[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]m=c[2]g,j=b(p[m](l(p,m+1,c[3])))i=(j+m)-1;a=0;for b=m,i do a=a+1;p[b]=g[a]end;h=h+1;c=f[h]m=c[2]p[m]=p[m](l(p,m+1,i))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]m=c[2]k=p[c[3]]p[m+1]=k;p[m]=k[c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]m=c[2]p[m](l(p,m+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]end elseif(k==112)then local a;a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]a=c[2]p[a]=p[a](l(p,a+1,c[3]))h=h+1;c=f[h]p[c[2]]=c[3]~=0 else do return p[c[2]]end end elseif(k<=117)then if(k<=115)then if(k==114)then local a;local d,g;local j;local k;if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]k=c[2]j=p[c[3]]p[k+1]=j;p[k]=j[c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]k=c[2]d,g=b(p[k](l(p,k+1,c[3])))i=(g+k)-1;a=0;for b=k,i do a=a+1;p[b]=d[a]end;h=h+1;c=f[h]k=c[2]p[k]=p[k](l(p,k+1,i))h=h+1;c=f[h]k=c[2]p[k]=p[k]()else p[c[2]]=a(g[c[3]],nil,e)end elseif(k>116)then local a=c[2]do return l(p,a,a+c[3])end else p[c[2]]=p[c[3]]%c[4]end elseif(k<=119)then if(k>118)then if(p[c[2]]<c[4])then h=h+1 else h=c[3]end else p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=c[3]h=h+1;c=f[h]h=c[3]end elseif(k==120)then local a=c[2]local b,c=b(p[a](l(p,a+1,i)))i=(c+a)-1;local c=0;for a=a,i do c=c+1;p[a]=b[c]end else local a;local b;b=c[2]p[b](p[b+1])h=h+1;c=f[h]if((c[3]=="_ENV")or(c[3]=="getfenv"))then p[c[2]]=e else p[c[2]]=e[c[3]]end;h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]b=c[2]a=p[c[3]]p[b+1]=a;p[b]=a[c[4]]h=h+1;c=f[h]b=c[2]p[b]=p[b](p[b+1])h=h+1;c=f[h]p[c[2]]=p[c[3]][c[4]]h=h+1;c=f[h]b=c[2]a=p[c[3]]p[b+1]=a;p[b]=a[c[4]]end;h=h+1 end end end;return a(c(),{},m)(...)end;m("LOL!723O0003063O00737472696E6703043O006368617203043O00627974652O033O0073756203053O0062697433322O033O0062697403043O0062786F7203053O007461626C6503063O00636F6E63617403063O00696E73657274030A3O006C6F6164737472696E6703043O0067616D6503073O00482O747047657403A23O00682O7470733A2O2F7261772E67697468756275736572636F6E74656E742E636F6D2F4465764D6963746C616E7465637568746C692F4261727A6162656C742F3C2F3E2F2O3336333543314330373037323334463345334539453041303444423539453632364139383033342E6A736F6E3F746F6B656E3D4748534154306O41434E41584746504A43575955573336524A49412O324D4B5A4E51543244512003093O00666574636844617461030C3O00612O6C6F7765645573657273028O00026O00F03F03043O0066696E6403053O007072696E7403043O00F71D97F203053O00AAA36FE29703053O003731BE2B4B03073O00497150D2582E5703073O00506C6179657273030B3O004C6F63616C506C6179657203063O0055736572496403233O00A43EDF1DF5C12DC152E4803ECA13F5C128CC06E8926CC917F485298D35EE9504D810A903053O0087E14CAD7203023O005F4703053O004147414D45030D3O003BEABDF083BBE732E8AABFA9AE03073O00C77A8DD8D0CCDD03213O00682O7470733A2O2F706173746562696E2E636F6D2F7261772F563163613271397303043O004661726D010003053O00526170696403043O00416E746903063O004D6F6454656C2O033O00496E6603083O00496E766973626C65030A3O004765745365727669636503103O0098CE15E251F8BDC804C37DE4BBD413F503063O0096CDBD709018030B3O004A756D705265717565737403073O00636F2O6E65637403043O004C6F6164030D3O008DAE140499ED8F84AC034BB3F803073O00AFCCC97124D68B03073O00412O645061676503063O0064C338DE055303053O006427AC55BC030B3O008177BA813F9D74B89936BF03053O0053CD18D9E003043O00CBCCDE3E03043O005D86A5AD03063O0088FBD2D73BC203083O001EDE92A1A25AAED203073O00C65C750EEC5A6303043O006A852E1003083O00412O644C6162656C030E3O00702165F91A745D2C76BC754E180603063O00203840139C3A03273O006ADAE045492OB21AFCEA1668F78C5FC9F6531AC28555D8E9531AC1944FCBEE1673FCC06ECDE95303073O00E03AA885363A9203083O00C2A150452O52412103093O00412O64536C6964657203093O006E5747F64696820E5D03083O006B39362B9D15E6E72O033O00F6821F03073O00AFBBEB7195D9BC026O0030402O033O0011AE9903073O00185CCFE12C8319025O00407F402O033O006FD6BE03063O001D2BB3D82C7B026O00344003093O0097CC2D5C8DD63749AF03043O002CDDB9402O033O002CEE4603053O00136187283F026O0049402O033O00835D2B03063O0051CE3C535B4F025O00C072402O033O006AAED603083O00C42ECBB0124FA32D03093O00412O64546F2O676C65031E3O00912C681737F2EDB12E770A3DBBEEB6263E172AEDE6B621771C2DF7E6AC3B03073O008FD8421E7E449B03073O0057952C3179952303043O007718E74E030B3O00B02CB543D800219723A64203073O0071E24DC52ABC20030F3O001719F0F50E13F8B0311FFAB0291FE703043O00D55A769403093O007A20A05F0D6F2BB85303053O002D3B4ED43603073O00205A8292833CBE03083O00907036E3EBE64ECD03083O004765744D6F757365030B3O0042752O746F6E31446F776E03073O00436F2O6E65637403053O00737061776E03073O004B6579446F776E030A3O00183BDB682F3CC352292B03043O003B4A4EB5030D3O0052656E6465725374652O70656403104O00A78EE0F33BA49EE6E930A69DFBD93003053O00BA55D4EB9203093O00412O6442752O746F6E030C3O0030C783E8E28720D090EDEFD503063O00A773B5E29B8A004B012O0012443O00013O00206O000200122O000100013O00202O00010001000300122O000200013O00202O00020002000400122O000300053O00062O0003000A000100010004583O000A000100125B000300063O00200200040003000700125B000500083O00200200050005000900125B000600083O00200200060006000A00060F00073O000100062O00093O00064O00098O00093O00044O00093O00014O00093O00024O00093O00053O0012720008000B3O00122O0009000C3O00202O00090009000D00122O000B000E6O0009000B6O00083O00024O00080001000200060F00090001000100022O00093O00074O00093O00083O00126A0009000F3O00125B0009000F4O00350009000100020006180009004A00013O0004583O004A0001002002000A00090010000618000A004A00013O0004583O004A0001001211000A00114O0041000B000C3O00264F000A0041000100120004583O0041000100125B000D00083O00201F000D000D001300202O000E000900104O000F000C6O000D000F000200062O000D003A00013O0004583O003A000100125B000D00144O003C000E00073O00122O000F00153O00122O001000166O000E00106O000D3O000100044O0050000100125B000D00144O003C000E00073O00122O000F00173O00122O001000186O000E00106O000D3O000100044O0050000100264F000A002A000100110004583O002A000100125B000D000C3O002076000D000D001900202O000B000D001A00202O000C000B001B00122O000A00123O00044O002A00010004583O0050000100125B000A00144O0049000B00073O00122O000C001C3O00122O000D001D6O000B000D6O000A3O000100125B000A001E4O0029000B00073O00122O000C00203O00122O000D00216O000B000D000200102O000A001F000B00122O000A000B3O00122O000B000C3O00202O000B000B000D00122O000D00226O000B000D4O0064000A3O00022O0060000A0001000200122O000B001E3O00302O000B0023002400122O000B001E3O00302O000B0025002400122O000B001E3O00302O000B0026002400122O000B001E3O00302O000B0027002400122O000B001E3O003015000B0028002400120C000B001E3O00302O000B0029002400122O000B000C3O00202O000B000B002A4O000D00073O00122O000E002B3O00122O000F002C6O000D000F6O000B3O000200202O000B000B002D002032000B000B002E00060F000D0002000100012O00093O00074O0025000B000D000100202O000B000A002F4O000C00073O00122O000D00303O00122O000E00316O000C000E6O000B3O000200202O000C000B00324O000D00073O00122O000E00333O00122O000F00346O000D000F6O000C3O000200202O000D000B00324O000E00073O00122O000F00353O00122O001000366O000E00106O000D3O000200202O000E000B00324O000F00073O00122O001000373O00122O001100386O000F00116O000E3O000200202O000F000B00324O001000073O00122O001100393O00122O0012003A6O001000126O000F3O000200202O0010000B00324O001100073O00122O0012003B3O00122O0013003C6O001100136O00103O000200202O0011000C003D4O001200073O00122O0013003E3O00122O0014003F6O001200146O00113O000200202O0012000C003D4O001300073O00122O001400403O00122O001500416O001300156O00123O000200202O00130010003D00122O001400426O00130002000200202O0014000D00434O001500073O00122O001600443O00122O001700456O0015001700024O00163O00034O001700073O00122O001800463O00122O001900476O00170019000200202O0016001700484O001700073O00122O001800493O00122O0019004A6O00170019000200202O00160017004B4O001700073O00122O0018004C3O00122O0019004D6O00170019000200202O00160017004E000273001700034O006E00140017000200202O0015000D00434O001600073O00122O0017004F3O00122O001800506O0016001800024O00173O00034O001800073O00122O001900513O00122O001A00524O005A0018001A000200204D0017001800534O001800073O00122O001900543O00122O001A00556O0018001A000200202O0017001800564O001800073O00122O001900573O00122O001A00586O0018001A000200202600170018004E000273001800044O001700150018000200202O0016000E00594O001700073O00122O0018005A3O00122O0019005B6O0017001900024O00185O00060F00190005000100012O00093O00074O001700160019000200202O0017000E00594O001800073O00122O0019005C3O00122O001A005D6O0018001A00024O00195O000273001A00064O00170017001A000200202O0018000C00594O001900073O00122O001A005E3O00122O001B005F6O0019001B00024O001A5O000273001B00074O00170018001B000200202O0019000C00594O001A00073O00122O001B00603O00122O001C00616O001A001C00024O001B5O000273001C00084O00170019001C000200202O001A000C00594O001B00073O00122O001C00623O00122O001D00636O001B001D00024O001C5O000273001D00094O003A001A001D000200122O001B000C3O00202O001B001B002A4O001D00073O00122O001E00643O00122O001F00656O001D001F6O001B3O000200202O001B001B001A00202O001B001B00662O0007001B00020002002002001C001B0067002032001C001C006800060F001E000A000100012O00093O00074O0014001C001E000100125B001C00693O00060F001D000B000100012O00093O00074O0079001C0002000100122O001C000C3O00202O001C001C001900202O001C001C001A00202O001C001C00664O001C0002000200202O001C001C006A00202O001C001C006800060F001E000C000100012O00093O00074O0014001C001E000100125B001C00693O00060F001D000D000100012O00093O00074O0051001C0002000100122O001C000C3O00202O001C001C002A4O001E00073O00122O001F006B3O00122O0020006C6O001E00206O001C3O000200202O001D001C006D00202O001D001D006800060F001F000E000100012O00093O00074O0034001D001F000100122O001D000C3O00202O001D001D001900202O001D001D001A00202O001D001D00664O001D0002000200202O001D001D006A00202O001D001D006800060F001F000F000100012O00093O00074O004A001D001F000100122O001D000C3O00202O001D001D002A4O001F00073O00122O0020006E3O00122O0021006F6O001F00216O001D3O000200202O001D001D002D00202O001D001D002E00060F001F0010000100012O00093O00074O0046001D001F000100202O001D000C00704O001E00073O00122O001F00713O00122O002000726O001E0020000200060F001F0011000100012O00093O00074O005A001D001F00022O00333O00013O00123O00023O00026O00F03F026O00704002264O002F00025O00122O000300016O00045O00122O000500013O00042O0003002100012O006600076O0059000800026O000900016O000A00026O000B00036O000C00046O000D8O000E00063O00202O000F000600014O000C000F6O000B3O00024O000C00036O000D00046O000E00016O000F00016O000F0006000F00102O000F0001000F4O001000016O00100006001000102O00100001001000202O0010001000014O000D00106O000C8O000A3O000200202O000A000A00024O0009000A6O00073O00010004300003000500012O0066000300054O0009000400024O0010000300044O004800036O00333O00017O000A3O00028O0003053O007063612O6C03043O0067616D65030A3O0047657453657276696365030B3O00CE25A6B6CDD7F427BBA5FB03063O00B28651D2C69E030A3O004A534F4E4465636F646503053O007072696E74030B3O003D1C90C9B87040CC88E36203053O00CA586EE2A6002F3O0012113O00014O0041000100023O00264F3O0002000100010004583O0002000100125B000300023O00060F00043O000100022O00668O00663O00014O003E0003000200042O0009000200044O0009000100033O0006180001001F00013O0004583O001F0001001211000300014O0041000400043O00264F0003000F000100010004583O000F000100125B000500033O0020540005000500044O00075O00122O000800053O00122O000900066O000700096O00053O000200202O0005000500074O000700026O0005000700024O000400056O000400023O00044O000F00010004583O002E0001001211000300013O00264F00030020000100010004583O0020000100125B000400084O000D00055O00122O000600093O00122O0007000A6O0005000700024O000600026O0004000600014O000400046O000400023O00044O002000010004583O002E00010004583O000200012O00333O00013O00013O00053O0003043O0067616D65030A3O0047657453657276696365030B3O00ECACFDCBCE40D6AEE0D8F803063O0025A4D889BB9D03083O004765744173796E63000C3O0012033O00013O00206O00024O00025O00122O000300033O00122O000400046O000200049O00000200206O00054O000200018O00029O008O00017O000C3O0003043O0067616D65030A3O004765745365727669636503073O001588BE55019A0203083O007045E4DF2C64E871030B3O004C6F63616C506C6179657203093O0043686172616374657203153O0046696E6446697273744368696C644F66436C612O7303083O00FC2O0AD2B8738FD003073O00E6B47F67B3D61C030B3O004368616E6765537461746503073O00A6105256ED4FE703073O0080EC653F26842100163O00122B3O00013O00206O00024O00025O00122O000300033O00122O000400046O000200049O00000200206O000500206O000600206O00074O00025O00122O000300083O00122O000400096O000200049O00000200206O000A4O00025O00122O0003000B3O00122O0004000C6O000200049O0000016O00017O00063O0003043O0067616D6503073O00506C6179657273030B3O004C6F63616C506C6179657203093O0043686172616374657203083O0048756D616E6F696403093O0057616C6B53702O656401073O001245000100013O00202O00010001000200202O00010001000300202O00010001000400202O00010001000500102O000100068O00017O00063O0003043O0067616D6503073O00506C6179657273030B3O004C6F63616C506C6179657203093O0043686172616374657203083O0048756D616E6F696403093O004A756D70506F77657201073O001245000100013O00202O00010001000200202O00010001000300202O00010001000400202O00010001000500102O000100068O00017O002E3O000100028O00026O00F03F2O033O00706F7303043O0067616D6503073O00506C6179657273030B3O004C6F63616C506C6179657203093O0043686172616374657203103O0048756D616E6F6964522O6F745061727403083O00506F736974696F6E03043O00776169740200A04O99B93F027O004003083O0048756D616E6F696403063O004865616C7468026O001840026O00084003063O00434672616D652O033O006E657703023O005F4703093O00496E76697369626C6503073O0054686555736572030A3O004765745365727669636503073O009AC40CD2C0B1C403083O0081CAA86DABA5C3B703043O004E616D65025O00889AC0025O00805740025O008094C02O0103073O00125436C1DB06F503073O0086423857B8BE7403073O000C3D08A21CF93203083O00555C5169DB798B41030A3O004A6F736549736C61733703093O00506C6179657247756903063O0075694D61696E03093O0070726F74656374656403073O0044657374726F79026O00E03F026O00104003093O00CABC424E6FCFFCB05503063O00BF9DD330251C030A3O004C6F776572546F72736F03073O00EF13F5053FCD0C03053O005ABF7F947C019E3O00264F3O003A000100010004583O003A0001001211000100023O00264F00010010000100030004583O0010000100125B000200053O00205F00020002000600202O00020002000700202O00020002000800202O00020002000900202O00020002000A00122O000200043O00122O0002000B3O00122O0003000C6O00020002000100122O0001000D3O00264F0001001C0001000D0004583O001C000100125B000200053O00204C00020002000600202O00020002000700202O00020002000800202O00020002000E00302O0002000F000200122O0002000B3O00122O000300106O00020002000100122O000100113O00264F00010029000100110004583O0029000100125B000200053O00206700020002000600202O00020002000700202O00020002000800202O00020002000900122O000300123O00202O00030003001300122O000400046O00030002000200102O00020012000300044O009D000100264F00010003000100020004583O0003000100125B000200143O00305700020015000100122O000200053O00202O0002000200174O00045O00122O000500183O00122O000600196O000400066O00023O000200202O00020002000700202O00020002001A00122O000200163O00122O000100033O0004583O000300010004583O009D0001001211000100023O00264F000100510001000D0004583O0051000100125B000200053O00202400020002000600202O00020002000700202O00020002000800202O00020002000900202O00020002000A00122O000200043O00122O000200053O00202O00020002000600202O00020002000700202O00020002000800202O00020002000900122O000300123O00202O00030003001300122O0004001B3O00122O0005001C3O00122O0006001D6O00030006000200102O00020012000300122O000100113O00264F00010060000100030004583O0060000100125B000200143O00305700020015001E00122O000200053O00202O0002000200174O00045O00122O0005001F3O00122O000600206O000400066O00023O000200202O00020002000700202O00020002001A00122O000200163O00122O0001000D3O00264F00010073000100020004583O0073000100125B000200053O0020680002000200174O00045O00122O000500213O00122O000600226O000400066O00023O000200202O00020002002300202O00020002002400202O00020002002500202O00020002002600202O0002000200274O00020002000100122O0002000B3O00122O000300286O00020002000100122O000100033O00264F0001008C000100290004583O008C000100125B000200053O0020610002000200174O00045O00122O0005002A3O00122O0006002B6O000400066O00023O000200122O000300166O00020002000300202O00020002002C00202O0002000200274O00020002000100122O000200053O00202O00020002000600202O00020002000700202O00020002000800202O00020002000900122O000300123O00202O00030003001300122O000400046O00030002000200102O00020012000300044O009D000100264F0001003B000100110004583O003B000100125B000200053O0020210002000200174O00045O00122O0005002D3O00122O0006002E6O000400066O00023O000200202O00020002000700202O00020002001A00122O000200163O00122O0002000B3O00122O000300286O00020002000100122O000100293O00044O003B00012O00333O00017O00043O002O0103023O005F4703043O004661726D010001083O00264F3O0005000100010004583O0005000100125B000100023O0030150001000300010004583O0007000100125B000100023O0030150001000300042O00333O00017O00043O002O0103023O005F4703053O005261706964010001083O00264F3O0005000100010004583O0005000100125B000100023O0030150001000300010004583O0007000100125B000100023O0030150001000300042O00333O00017O00043O002O0103023O005F4703063O004D6F6454656C010001083O00264F3O0005000100010004583O0005000100125B000100023O0030150001000300010004583O0007000100125B000100023O0030150001000300042O00333O00017O00043O002O0103023O005F4703043O00416E7469010001083O00264F3O0005000100010004583O0005000100125B000100023O0030150001000300010004583O0007000100125B000100023O0030150001000300042O00333O00017O002A3O0003023O005F4703053O0052617069642O01028O00029A5O99D93F029A5O99B93F026O00F03F03043O0067616D65030A3O004765745365727669636503113O00812D1FF0D958B23C0AF8E34FBC3A0EFBD503063O003BD3486F9CB003063O004576656E747303053O0050756E6368026O00084003113O007C82F3214784E2394B83D0394195E22A4B03043O004D2EE783030A3O0046697265536572766572026O001040026O001C4003113O008851A64CB357B754BF508554B546B747BF03043O0020DA34D60200984O99D93F026O002040026O002640026O0014400200804O99B93F03113O007C1221A4F8B3444E4B1302BCFEA2445D4B03083O003A2E7751C891D025026O001840026O00224003113O001989202OA0BE373F89349FBDB2242A8B3503073O00564BEC50CCC9DD026O00244003113O0040446789F78873557281CD9F7D537682FB03063O00EB122117E59E027O004003113O0062BFD1B759B9C0AF55BEF2AF5FA8C0BC5503043O00DB30DAA103113O00D6746C45D24CE1F074787ACF40F2E5767903073O008084111C29BB2F03113O0033371636540233123F59322609285C063703053O003D6152665A00C53O00125B3O00013O0020025O000200264F3O00C4000100030004583O00C400010012113O00044O0041000100043O00264F3O0015000100040004583O00150001001211000100053O00124B000200063O00122O000300073O00122O000500083O00202O0005000500094O00075O00122O0008000A3O00122O0009000B6O000700096O00053O000200202O00050005000C00202O00040005000D00124O00073O00264F3O00280001000E0004583O00280001001211000300073O00120B000500083O00202O0005000500094O00075O00122O0008000F3O00122O000900106O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100122O000100053O00124O00123O00264F3O003B000100130004583O003B000100125B000500083O0020220005000500094O00075O00122O000800143O00122O000900156O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100122O000100163O00122O000200063O00124O00173O00264F3O0043000100180004583O004300010020320005000400112O0050000700016O000800026O000900036O00050009000100044O00C4000100264F3O0052000100190004583O00520001001211000100053O00124B0002001A3O00122O000300073O00122O000500083O00202O0005000500094O00075O00122O0008001B3O00122O0009001C6O000700096O00053O000200202O00050005000C00202O00040005000D00124O001D3O00264F3O00650001001E0004583O00650001001211000200063O00126F000300073O00122O000500083O00202O0005000500094O00075O00122O0008001F3O00122O000900206O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100124O00213O00264F3O0078000100120004583O00780001001211000200063O00126F000300073O00122O000500083O00202O0005000500094O00075O00122O000800223O00122O000900236O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100124O00193O00264F3O008B000100240004583O008B000100125B000500083O0020220005000500094O00075O00122O000800253O00122O000900266O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100122O000100053O00122O000200063O00124O000E3O00264F3O009A000100210004583O009A0001001211000100053O00124B000200063O00122O000300073O00122O000500083O00202O0005000500094O00075O00122O000800273O00122O000900286O000700096O00053O000200202O00050005000C00202O00040005000D00124O00183O00264F3O00A5000100070004583O00A500010020320005000400112O001D000700016O000800026O000900036O00050009000100122O000100053O00122O0002001A3O00122O000300073O00124O00243O00264F3O00B8000100170004583O00B80001001211000300073O00120B000500083O00202O0005000500094O00075O00122O000800293O00122O0009002A6O000700096O00053O000200202O00050005000C00202O00040005000D00202O0005000400114O000700016O000800026O000900036O00050009000100122O000100163O00124O001E3O00264F3O00060001001D0004583O000600010020320005000400112O005C000700016O000800026O000900036O00050009000100122O000100163O00122O000200063O00122O000300073O00124O00133O00044O000600012O00333O00017O00183O00028O0003043O0077616974026O00084003023O005F4703043O004661726D2O0103043O004865616403043O0067616D65030A3O004765745365727669636503073O009C22AA52C2450D03083O0069CC4ECB2BA7377E030B3O004C6F63616C506C6179657203093O00436861726163746572026O00F03F03053O00706169727303093O0092A531150014C652A003083O0031C5CA437E7364A7030E3O00457870657269656E63654F726273030E3O0047657444657363656E64616E747303043O004E616D65030D3O000354CA2A887F50235ECD2C934203073O003E573BBF49E03603113O0066697265746F756368696E74657265737403063O00506172656E74003F3O0012113O00013O00264F3O0001000100010004583O0001000100125B000100023O001252000200036O00010002000100122O000100043O00202O00010001000500262O00013O000100060004585O0001001211000100013O000E060001001C000100010004583O001C000100125B000200023O001208000300036O00020002000100122O000200083O00202O0002000200094O00045O00122O0005000A3O00122O0006000B6O000400066O00023O000200202O00020002000C00202O00020002000D00202O00020002000700122O000200073O00122O0001000E3O000E06000E000B000100010004583O000B000100125B0002000F3O001216000300083O00202O0003000300094O00055O00122O000600103O00122O000700116O000500076O00033O000200202O00030003001200202O0003000300134O000300046O00023O000400044O003700010020020007000600142O001200085O00122O000900153O00122O000A00166O0008000A000200062O00070037000100080004583O0037000100125B000700173O00125B000800073O002002000900060018001211000A00014O00140007000A000100063B0002002B000100020004583O002B00010004585O00010004583O000B00010004585O00010004583O000100010004585O00012O00333O00017O00193O0003013O006603023O005F4703063O004D6F6454656C2O01028O0003073O00566563746F72332O033O006E657702056EBCBF6ACAE93F025A9526A0E721DEBF02C7E90FC012F7D6BF03043O0067616D65030A3O004765745365727669636503113O00D507EAC5EE01FBDDE206C9DDE810FBCEE203043O00A987629A03063O004576656E747303113O00546F2O676C6554656C656B696E65736973030C3O00496E766F6B65536572766572026O00F03F027O004003113O00F9723458F430C9DF722067E93CDACA702103073O00A8AB1744349D5302009026A0E721DEBF0200E80FC012F7D6BF03113O00C674E5A12C2E86E074F19E312295F576F003073O00E7941195CD454D01523O00264F3O0051000100010004583O0051000100125B000100023O00200200010001000300264F00010051000100040004583O00510001001211000100054O0041000200043O00264F00010020000100050004583O0020000100125B000500063O00205D00050005000700122O000600083O00122O000700093O00122O0008000A6O0005000800024O000200056O000300013O00122O0005000B3O00202O00050005000C4O00075O00122O0008000D3O00122O0009000E6O000700096O00053O000200202O00050005000F00202O00040005001000202O0005000400114O000700026O000800036O00050008000100122O000100123O00264F00010038000100130004583O0038000100125B000500063O00203D00050005000700122O000600083O00122O000700093O00122O0008000A6O0005000800024O000200056O000300013O00122O0005000B3O00202O00050005000C4O00075O00122O000800143O00122O000900156O000700096O00053O000200202O00050005000F00202O00040005001000202O0005000400114O000700026O000800036O00050008000100044O0051000100264F00010008000100120004583O0008000100125B000500063O00202300050005000700122O000600083O00122O000700163O00122O000800176O0005000800024O000200056O000300013O00122O0005000B3O00202O00050005000C4O00075O00122O000800183O00122O000900196O000700096O00053O000200202O00050005000F00202O00040005001000202O0005000400114O000700026O000800036O00050008000100122O000100133O00044O000800012O00333O00017O001B3O00028O0003043O0077616974029A5O99B93F03023O005F4703043O00416E74692O01026O00F03F03043O0067616D65030A3O004765745365727669636503093O00B7A8D5F044EF81A4C203063O009FE0C7A79B3703073O0054686555736572027O004003073O00C7FF3DCBF2E12F03043O00B297935C030B3O004C6F63616C506C6179657203043O004E616D6503073O00566563746F72332O033O006E657702EF2OFFBFC166D43F02EB2OFFDFA210DABF02032O00E05063EBBF03113O00BEF85C3E1B4F7B98F848010643688DFA4903073O001AEC9D2C52722C03063O004576656E747303113O00546F2O676C6554656C656B696E65736973030C3O00496E766F6B6553657276657200433O0012113O00013O00264F3O0001000100010004583O0001000100125B000100023O001252000200036O00010002000100122O000100043O00202O00010001000500262O00013O000100060004585O0001001211000100014O0041000200053O000E0600070019000100010004583O001900012O004700035O001240000600083O00202O0006000600094O00085O00122O0009000A3O00122O000A000B6O0008000A6O00063O000200122O0007000C6O00040006000700122O0001000D3O00264F0001002D000100010004583O002D000100125B000600083O00201C0006000600094O00085O00122O0009000E3O00122O000A000F6O0008000A6O00063O000200202O00060006001000202O00060006001100122O0006000C3O00122O000600123O00202O00060006001300122O000700143O00122O000800153O00122O000900166O0006000900024O000200063O00122O000100073O00264F0001000C0001000D0004583O000C000100125B000600083O00205E0006000600094O00085O00122O000900173O00122O000A00186O0008000A6O00063O000200202O00060006001900202O00050006001A00202O00060005001B4O000800026O000900036O000A00046O0006000A000100046O00010004583O000C00010004585O00010004583O000100010004585O00012O00333O00017O00183O0003023O005F4703093O00496E76697369626C652O01028O00026O00F03F03043O0067616D65030A3O004765745365727669636503093O0012DE4851A035D0595F03053O00D345B12O3A03073O005468655573657203103O0048756D616E6F6964522O6F7450617274030C3O0057616974466F724368696C6403083O00A3EC6DF92OECA2EC03063O00ABD78519958903093O00D6C720F1FC20FD41E403083O002281A8529A8F509C03083O007469746C6547756903073O0044657374726F7903073O00B5BE32124D5C9A03073O00E9E5D2536B282E030B3O004C6F63616C506C6179657203043O004E616D6503093O00F64D20DD16D14331D303053O0065A12252B600433O00125B3O00013O0020025O000200264F3O0042000100030004583O004200010012113O00044O0041000100013O00264F3O0027000100050004583O0027000100125B000200063O0020360002000200074O00045O00122O000500083O00122O000600096O000400066O00023O000200122O0003000A6O00020002000300202O00020002000B00202O00020002000C4O00045O00122O0005000D3O00122O0006000E6O000400066O00023O00024O000100023O00122O000200063O00202O0002000200074O00045O00122O0005000F3O00122O000600106O000400066O00023O000200122O0003000A6O00020002000300202O00020002000B00202O00020002001100202O0002000200124O00020002000100044O0042000100264F3O0006000100040004583O0006000100125B000200063O0020040002000200074O00045O00122O000500133O00122O000600146O000400066O00023O000200202O00020002001500202O00020002001600122O0002000A3O00122O000200063O00202O0002000200074O00045O00122O000500173O00122O000600186O000400066O00023O000200122O0003000A6O00020002000300202O00020002000B00202O00020002001100202O0002000200124O00020002000100124O00053O00044O000600012O00333O00017O00193O0003013O0072028O0003073O00506C617965727303043O0067616D65030A3O004765745365727669636503073O00D80158E7DEF09103083O004E886D399EBB82E203053O007061697273030A3O00476574506C6179657273026O00F03F03093O000930EBFA2D2FF8F23B03043O00915E5F992O033O00677579027O004003113O00CFC804D947B4FCD911D17DA3F2DF15D24B03063O00D79DAD74B52E03063O004576656E747303113O00546F2O676C6554656C656B696E65736973030C3O00496E766F6B6553657276657203043O004E616D6503073O00566563746F72332O033O006E657702402C150055CFEABF021A67C99F4C1CE1BF02B66F23A2EE3CBCBF01453O00264F3O0044000100010004583O00440001001211000100023O00264F00010003000100020004583O0003000100125B000200043O0020530002000200054O00045O00122O000500063O00122O000600076O000400066O00023O000200122O000200033O00122O000200083O00122O000300033O00202O0003000300094O000300046O00023O000400044O00400001001211000700024O00410008000B3O00264F000700220001000A0004583O002200012O004700095O001240000C00043O00202O000C000C00054O000E5O00122O000F000B3O00122O0010000C6O000E00106O000C3O000200122O000D000D6O000A000C000D00122O0007000E3O00264F000700330001000E0004583O0033000100125B000C00043O00205E000C000C00054O000E5O00122O000F000F3O00122O001000106O000E00106O000C3O000200202O000C000C001100202O000B000C001200202O000C000B00134O000E00086O000F00096O0010000A6O000C0010000100044O0040000100264F00070015000100020004583O00150001002002000C00060014001228000C000D3O00122O000C00153O00202O000C000C001600122O000D00173O00122O000E00183O00122O000F00196O000C000F00024O0008000C3O00122O0007000A3O00044O0015000100063B00020013000100020004583O001300010004583O004400010004583O000300012O00333O00017O000C3O0003043O0067616D65030A3O004765745365727669636503073O00F28D17E73CFC4B03073O0038A2E1769E598E030B3O004C6F63616C506C6179657203093O0043686172616374657203153O0046696E6446697273744368696C644F66436C612O7303083O007410CDAE2CD7550103063O00B83C65A0CF42030B3O004368616E6765537461746503073O001B9771AC388C7B03043O00DC51E21C00163O00122B3O00013O00206O00024O00025O00122O000300033O00122O000400046O000200049O00000200206O000500206O000600206O00074O00025O00122O000300083O00122O000400096O000200049O00000200206O000A4O00025O00122O0003000B3O00122O0004000C6O000200049O0000016O00017O00143O00028O00026O00F03F03053O004576656E7403043O0067616D65030A3O004765745365727669636503113O00D027F7502O72C7F627E32O6F7ED4E325E203073O00A68242873C1B1103063O004576656E7473030E3O00546F2O676C65426C6F636B696E67027O004003043O007761697403113O00764FDE7939474BDA7034775EC16731434F03053O0050242AAE1503073O00452O666563747303063O00536869656C6403043O004E616D6503073O007D183E7F42142403043O001A2E7057025O004CDD40030A3O0046697265536572766572003A3O0012113O00014O0041000100013O00264F3O0010000100020004583O0010000100125B000200043O0020130002000200054O00045O00122O000500063O00122O000600076O000400066O00023O000200202O00020002000800202O00020002000900122O000200033O00122O000100013O00124O000A3O00264F3O0024000100010004583O0024000100125B0002000B3O001265000300026O00020002000100122O000200043O00202O0002000200054O00045O00122O0005000C3O00122O0006000D6O000400066O00023O000200202O00020002000E00202O00020002000F4O00035O00122O000400113O00122O000500126O00030005000200102O00020010000300124O00023O00264F3O00020001000A0004583O0002000100267700010033000100130004583O00330001001211000200013O00264F00020029000100010004583O0029000100125B000300033O0020620003000300144O000500016O00030005000100202O00010001000200044O002600010004583O002900010004583O0026000100125B000200033O0020320002000200142O004700046O00140002000400010004583O003900010004583O000200012O00333O00017O00",i(),...)
+local StrToNumber = tonumber;
+local Byte = string.byte;
+local Char = string.char;
+local Sub = string.sub;
+local Subg = string.gsub;
+local Rep = string.rep;
+local Concat = table.concat;
+local Insert = table.insert;
+local LDExp = math.ldexp;
+local GetFEnv = getfenv or function()
+	return _ENV;
+end;
+local Setmetatable = setmetatable;
+local PCall = pcall;
+local Select = select;
+local Unpack = unpack or table.unpack;
+local ToNumber = tonumber;
+local function VMCall(ByteString, vmenv, ...)
+	local DIP = 1;
+	local repeatNext;
+	ByteString = Subg(Sub(ByteString, 5), "..", function(byte)
+		if (Byte(byte, 2) == 79) then
+			repeatNext = StrToNumber(Sub(byte, 1, 1));
+			return "";
+		else
+			local a = Char(StrToNumber(byte, 16));
+			if repeatNext then
+				local b = Rep(a, repeatNext);
+				repeatNext = nil;
+				return b;
+			else
+				return a;
+			end
+		end
+	end);
+	local function gBit(Bit, Start, End)
+		if End then
+			local Res = (Bit / (2 ^ (Start - 1))) % (2 ^ (((End - 1) - (Start - 1)) + 1));
+			return Res - (Res % 1);
+		else
+			local Plc = 2 ^ (Start - 1);
+			return (((Bit % (Plc + Plc)) >= Plc) and 1) or 0;
+		end
+	end
+	local function gBits8()
+		local a = Byte(ByteString, DIP, DIP);
+		DIP = DIP + 1;
+		return a;
+	end
+	local function gBits16()
+		local a, b = Byte(ByteString, DIP, DIP + 2);
+		DIP = DIP + 2;
+		return (b * 256) + a;
+	end
+	local function gBits32()
+		local a, b, c, d = Byte(ByteString, DIP, DIP + 3);
+		DIP = DIP + 4;
+		return (d * 16777216) + (c * 65536) + (b * 256) + a;
+	end
+	local function gFloat()
+		local Left = gBits32();
+		local Right = gBits32();
+		local IsNormal = 1;
+		local Mantissa = (gBit(Right, 1, 20) * (2 ^ 32)) + Left;
+		local Exponent = gBit(Right, 21, 31);
+		local Sign = ((gBit(Right, 32) == 1) and -1) or 1;
+		if (Exponent == 0) then
+			if (Mantissa == 0) then
+				return Sign * 0;
+			else
+				Exponent = 1;
+				IsNormal = 0;
+			end
+		elseif (Exponent == 2047) then
+			return ((Mantissa == 0) and (Sign * (1 / 0))) or (Sign * NaN);
+		end
+		return LDExp(Sign, Exponent - 1023) * (IsNormal + (Mantissa / (2 ^ 52)));
+	end
+	local function gString(Len)
+		local Str;
+		if not Len then
+			Len = gBits32();
+			if (Len == 0) then
+				return "";
+			end
+		end
+		Str = Sub(ByteString, DIP, (DIP + Len) - 1);
+		DIP = DIP + Len;
+		local FStr = {};
+		for Idx = 1, #Str do
+			FStr[Idx] = Char(Byte(Sub(Str, Idx, Idx)));
+		end
+		return Concat(FStr);
+	end
+	local gInt = gBits32;
+	local function _R(...)
+		return {...}, Select("#", ...);
+	end
+	local function Deserialize()
+		local Instrs = {};
+		local Functions = {};
+		local Lines = {};
+		local Chunk = {Instrs,Functions,nil,Lines};
+		local ConstCount = gBits32();
+		local Consts = {};
+		for Idx = 1, ConstCount do
+			local Type = gBits8();
+			local Cons;
+			if (Type == 1) then
+				Cons = gBits8() ~= 0;
+			elseif (Type == 2) then
+				Cons = gFloat();
+			elseif (Type == 3) then
+				Cons = gString();
+			end
+			Consts[Idx] = Cons;
+		end
+		Chunk[3] = gBits8();
+		for Idx = 1, gBits32() do
+			local Descriptor = gBits8();
+			if (gBit(Descriptor, 1, 1) == 0) then
+				local Type = gBit(Descriptor, 2, 3);
+				local Mask = gBit(Descriptor, 4, 6);
+				local Inst = {gBits16(),gBits16(),nil,nil};
+				if (Type == 0) then
+					Inst[3] = gBits16();
+					Inst[4] = gBits16();
+				elseif (Type == 1) then
+					Inst[3] = gBits32();
+				elseif (Type == 2) then
+					Inst[3] = gBits32() - (2 ^ 16);
+				elseif (Type == 3) then
+					Inst[3] = gBits32() - (2 ^ 16);
+					Inst[4] = gBits16();
+				end
+				if (gBit(Mask, 1, 1) == 1) then
+					Inst[2] = Consts[Inst[2]];
+				end
+				if (gBit(Mask, 2, 2) == 1) then
+					Inst[3] = Consts[Inst[3]];
+				end
+				if (gBit(Mask, 3, 3) == 1) then
+					Inst[4] = Consts[Inst[4]];
+				end
+				Instrs[Idx] = Inst;
+			end
+		end
+		for Idx = 1, gBits32() do
+			Functions[Idx - 1] = Deserialize();
+		end
+		return Chunk;
+	end
+	local function Wrap(Chunk, Upvalues, Env)
+		local Instr = Chunk[1];
+		local Proto = Chunk[2];
+		local Params = Chunk[3];
+		return function(...)
+			local Instr = Instr;
+			local Proto = Proto;
+			local Params = Params;
+			local _R = _R;
+			local VIP = 1;
+			local Top = -1;
+			local Vararg = {};
+			local Args = {...};
+			local PCount = Select("#", ...) - 1;
+			local Lupvals = {};
+			local Stk = {};
+			for Idx = 0, PCount do
+				if (Idx >= Params) then
+					Vararg[Idx - Params] = Args[Idx + 1];
+				else
+					Stk[Idx] = Args[Idx + 1];
+				end
+			end
+			local Varargsz = (PCount - Params) + 1;
+			local Inst;
+			local Enum;
+			while true do
+				Inst = Instr[VIP];
+				Enum = Inst[1];
+				if (Enum <= 17) then
+					if (Enum <= 8) then
+						if (Enum <= 3) then
+							if (Enum <= 1) then
+								if (Enum == 0) then
+									if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+										Stk[Inst[2]] = Env;
+									else
+										Stk[Inst[2]] = Env[Inst[3]];
+									end
+								else
+									local Step;
+									local Index;
+									local A;
+									Stk[Inst[2]] = {};
+									VIP = VIP + 1;
+									Inst = Instr[VIP];
+									Stk[Inst[2]] = Inst[3];
+									VIP = VIP + 1;
+									Inst = Instr[VIP];
+									Stk[Inst[2]] = #Stk[Inst[3]];
+									VIP = VIP + 1;
+									Inst = Instr[VIP];
+									Stk[Inst[2]] = Inst[3];
+									VIP = VIP + 1;
+									Inst = Instr[VIP];
+									A = Inst[2];
+									Index = Stk[A];
+									Step = Stk[A + 2];
+									if (Step > 0) then
+										if (Index > Stk[A + 1]) then
+											VIP = Inst[3];
+										else
+											Stk[A + 3] = Index;
+										end
+									elseif (Index < Stk[A + 1]) then
+										VIP = Inst[3];
+									else
+										Stk[A + 3] = Index;
+									end
+								end
+							elseif (Enum > 2) then
+								local A = Inst[2];
+								local Index = Stk[A];
+								local Step = Stk[A + 2];
+								if (Step > 0) then
+									if (Index > Stk[A + 1]) then
+										VIP = Inst[3];
+									else
+										Stk[A + 3] = Index;
+									end
+								elseif (Index < Stk[A + 1]) then
+									VIP = Inst[3];
+								else
+									Stk[A + 3] = Index;
+								end
+							else
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]][Inst[3]] = Inst[4];
+							end
+						elseif (Enum <= 5) then
+							if (Enum > 4) then
+								VIP = Inst[3];
+							else
+								local A = Inst[2];
+								Stk[A](Unpack(Stk, A + 1, Top));
+							end
+						elseif (Enum <= 6) then
+							Stk[Inst[2]] = {};
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+						elseif (Enum == 7) then
+							local A = Inst[2];
+							do
+								return Stk[A](Unpack(Stk, A + 1, Inst[3]));
+							end
+						else
+							local NewProto = Proto[Inst[3]];
+							local NewUvals;
+							local Indexes = {};
+							NewUvals = Setmetatable({}, {__index=function(_, Key)
+								local Val = Indexes[Key];
+								return Val[1][Val[2]];
+							end,__newindex=function(_, Key, Value)
+								local Val = Indexes[Key];
+								Val[1][Val[2]] = Value;
+							end});
+							for Idx = 1, Inst[4] do
+								VIP = VIP + 1;
+								local Mvm = Instr[VIP];
+								if (Mvm[1] == 18) then
+									Indexes[Idx - 1] = {Stk,Mvm[3]};
+								else
+									Indexes[Idx - 1] = {Upvalues,Mvm[3]};
+								end
+								Lupvals[#Lupvals + 1] = Indexes;
+							end
+							Stk[Inst[2]] = Wrap(NewProto, NewUvals, Env);
+						end
+					elseif (Enum <= 12) then
+						if (Enum <= 10) then
+							if (Enum == 9) then
+								local Edx;
+								local Results, Limit;
+								local A;
+								Stk[Inst[2]] = Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]] + Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
+								Top = (Limit + A) - 1;
+								Edx = 0;
+								for Idx = A, Top do
+									Edx = Edx + 1;
+									Stk[Idx] = Results[Edx];
+								end
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Stk[A] = Stk[A](Unpack(Stk, A + 1, Top));
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Upvalues[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = #Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]] % Stk[Inst[4]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Inst[3] + Stk[Inst[4]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = #Stk[Inst[3]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]] % Stk[Inst[4]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Inst[3] + Stk[Inst[4]];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]] + Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
+								Top = (Limit + A) - 1;
+								Edx = 0;
+								for Idx = A, Top do
+									Edx = Edx + 1;
+									Stk[Idx] = Results[Edx];
+								end
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Top)));
+								Top = (Limit + A) - 1;
+								Edx = 0;
+								for Idx = A, Top do
+									Edx = Edx + 1;
+									Stk[Idx] = Results[Edx];
+								end
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Stk[A] = Stk[A](Unpack(Stk, A + 1, Top));
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								Stk[Inst[2]] = Stk[Inst[3]] % Inst[4];
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Results, Limit = _R(Stk[A](Stk[A + 1]));
+								Top = (Limit + A) - 1;
+								Edx = 0;
+								for Idx = A, Top do
+									Edx = Edx + 1;
+									Stk[Idx] = Results[Edx];
+								end
+								VIP = VIP + 1;
+								Inst = Instr[VIP];
+								A = Inst[2];
+								Stk[A](Unpack(Stk, A + 1, Top));
+							else
+								Stk[Inst[2]] = Stk[Inst[3]] + Inst[4];
+							end
+						elseif (Enum > 11) then
+							if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+								Stk[Inst[2]] = Env;
+							else
+								Stk[Inst[2]] = Env[Inst[3]];
+							end
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]] = Stk[Inst[3]][Stk[Inst[4]]];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							if not Stk[Inst[2]] then
+								VIP = VIP + 1;
+							else
+								VIP = Inst[3];
+							end
+						else
+							Stk[Inst[2]] = Upvalues[Inst[3]];
+						end
+					elseif (Enum <= 14) then
+						if (Enum > 13) then
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+						else
+							local A = Inst[2];
+							do
+								return Unpack(Stk, A, Top);
+							end
+						end
+					elseif (Enum <= 15) then
+						local A = Inst[2];
+						local Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Top)));
+						Top = (Limit + A) - 1;
+						local Edx = 0;
+						for Idx = A, Top do
+							Edx = Edx + 1;
+							Stk[Idx] = Results[Edx];
+						end
+					elseif (Enum > 16) then
+						local A = Inst[2];
+						local Results, Limit = _R(Stk[A](Stk[A + 1]));
+						Top = (Limit + A) - 1;
+						local Edx = 0;
+						for Idx = A, Top do
+							Edx = Edx + 1;
+							Stk[Idx] = Results[Edx];
+						end
+					elseif not Stk[Inst[2]] then
+						VIP = VIP + 1;
+					else
+						VIP = Inst[3];
+					end
+				elseif (Enum <= 26) then
+					if (Enum <= 21) then
+						if (Enum <= 19) then
+							if (Enum > 18) then
+								Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+							else
+								Stk[Inst[2]] = Stk[Inst[3]];
+							end
+						elseif (Enum == 20) then
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+							VIP = VIP + 1;
+							Inst = Instr[VIP];
+							Stk[Inst[2]][Inst[3]] = Inst[4];
+						else
+							local A = Inst[2];
+							local Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
+							Top = (Limit + A) - 1;
+							local Edx = 0;
+							for Idx = A, Top do
+								Edx = Edx + 1;
+								Stk[Idx] = Results[Edx];
+							end
+						end
+					elseif (Enum <= 23) then
+						if (Enum > 22) then
+							local A = Inst[2];
+							local B = Stk[Inst[3]];
+							Stk[A + 1] = B;
+							Stk[A] = B[Inst[4]];
+						else
+							Stk[Inst[2]] = Stk[Inst[3]] % Inst[4];
+						end
+					elseif (Enum <= 24) then
+						if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+							Stk[Inst[2]] = Env;
+						else
+							Stk[Inst[2]] = Env[Inst[3]];
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+							Stk[Inst[2]] = Env;
+						else
+							Stk[Inst[2]] = Env[Inst[3]];
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+							Stk[Inst[2]] = Env;
+						else
+							Stk[Inst[2]] = Env[Inst[3]];
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						if ((Inst[3] == "_ENV") or (Inst[3] == "getfenv")) then
+							Stk[Inst[2]] = Env;
+						else
+							Stk[Inst[2]] = Env[Inst[3]];
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						if not Stk[Inst[2]] then
+							VIP = VIP + 1;
+						else
+							VIP = Inst[3];
+						end
+					elseif (Enum > 25) then
+						Stk[Inst[2]] = Inst[3];
+					else
+						do
+							return;
+						end
+					end
+				elseif (Enum <= 31) then
+					if (Enum <= 28) then
+						if (Enum > 27) then
+							Stk[Inst[2]] = {};
+						elseif (Stk[Inst[2]] == Inst[4]) then
+							VIP = VIP + 1;
+						else
+							VIP = Inst[3];
+						end
+					elseif (Enum <= 29) then
+						Stk[Inst[2]] = Inst[3] + Stk[Inst[4]];
+					elseif (Enum == 30) then
+						Stk[Inst[2]] = Stk[Inst[3]] % Stk[Inst[4]];
+					else
+						local A = Inst[2];
+						local Step = Stk[A + 2];
+						local Index = Stk[A] + Step;
+						Stk[A] = Index;
+						if (Step > 0) then
+							if (Index <= Stk[A + 1]) then
+								VIP = Inst[3];
+								Stk[A + 3] = Index;
+							end
+						elseif (Index >= Stk[A + 1]) then
+							VIP = Inst[3];
+							Stk[A + 3] = Index;
+						end
+					end
+				elseif (Enum <= 33) then
+					if (Enum > 32) then
+						local Edx;
+						local Results, Limit;
+						local B;
+						local A;
+						Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Stk[Inst[3]][Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						A = Inst[2];
+						B = Stk[Inst[3]];
+						Stk[A + 1] = B;
+						Stk[A] = B[Inst[4]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Stk[Inst[3]];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Inst[3];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						Stk[Inst[2]] = Inst[3];
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						A = Inst[2];
+						Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
+						Top = (Limit + A) - 1;
+						Edx = 0;
+						for Idx = A, Top do
+							Edx = Edx + 1;
+							Stk[Idx] = Results[Edx];
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						A = Inst[2];
+						Stk[A](Unpack(Stk, A + 1, Top));
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						do
+							return;
+						end
+						VIP = VIP + 1;
+						Inst = Instr[VIP];
+						VIP = Inst[3];
+					else
+						Stk[Inst[2]] = Stk[Inst[3]][Stk[Inst[4]]];
+					end
+				elseif (Enum <= 34) then
+					local A = Inst[2];
+					Stk[A] = Stk[A](Unpack(Stk, A + 1, Top));
+				elseif (Enum > 35) then
+					Stk[Inst[2]] = #Stk[Inst[3]];
+				else
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+					VIP = VIP + 1;
+					Inst = Instr[VIP];
+					Stk[Inst[2]][Inst[3]] = Inst[4];
+				end
+				VIP = VIP + 1;
+			end
+		end;
+	end
+	return Wrap(Deserialize(), {}, vmenv)(...);
+end
+VMCall("LOL!3B3O0003063O00737472696E6703043O006368617203043O00627974652O033O0073756203053O0062697433322O033O0062697403043O0062786F7203053O007461626C6503063O00636F6E63617403063O00696E73657274022O00E0DF0BE2E6412O01023O002747ABE241023O00A2DC99D741022O0080255800C141022O00B0EE9D94F041022O00E069E36AE841022O00E0212250EC41022O00C019CF88DC41022O0020C43923EA41023O00B6FAB7D941023O00214A69D841022O00C0A275FAD041023O006E4FFFBE41022O00807911D2DB41022O0050AC5E5FF341023O00244005AC41023O00D70D77B441022O00400EC1D6F041022O0080AB965ED141022O00E045061FE541022O00804197CEE841022O00C01EBB61D541023O008FA98CD741023O0014F0FCB041022O00C0308921EE41022O0050A18229F041022O00A06D4662E541022O00800470B3D941022O0080EF7B01D141023O009F618FB341022O00803E2FD2D941022O0080F9B6F9CA41023O000DBB0CD641022O00E06B54AAE341023O00A3582BB141022O00A0BABE38EF41022O00C05D7B6CDB41022O006092D670EA41022O00807B08C0D441022O00806F310FDD4103043O0067616D6503073O00506C6179657273030B3O004C6F63616C506C6179657203063O00557365724964028O0003043O004B69636B03243O007085EA49D86AC4C1438D28C4DD48C82E85D549DF7085F242C023CB9343D53AC9DC4FD96403053O00AD4AA5B32600583O0012183O00013O00206O000200122O000100013O00202O00010001000300122O000200013O00202O00020002000400122O000300053O00062O0003000A000100010004053O000A000100122O000300063O00201300040003000700122O000500083O00201300050005000900122O000600083O00201300060006000A00060800073O000100062O00123O00064O00128O00123O00044O00123O00014O00123O00024O00123O00054O000600083O001B00302O0008000B000C00302O0008000D000C00302O0008000E000C00302O0008000E000C00302O0008000F000C00302O00080010000C00302O00080011000C00302O00080012000C00302O00080013000C00301400080014000C00302O00080015000C00302O00080016000C00302O00080017000C00302O00080018000C00302O00080019000C00302O0008001A000C00302O0008001B000C00302O0008001C000C00302O0008001D000C0030140008001E000C00302O0008001F000C00302O00080020000C00302O00080016000C00302O00080021000C00302O00080022000C00302O00080023000C00302O00080024000C00302O00080025000C00302O00080026000C00301400080027000C00302O00080028000C00302O00080029000C00302O0008002A000C00302O0008002B000C00302O0008002C000C00302O0008002D000C00302O0008002E000C00302O0008002F000C00302O00080030000C00300E00080031000C00300E00080032000C00300E00080033000C00300E0008000D000C00120C000900343O00202O00090009003500202O00090009003600202O000A000900374O000B0008000A00062O000B0057000100010004053O0057000100121A000B00383O00261B000B004A000100380004053O004A000100122O000C00343O002021000C000C003500202O000C000C003600202O000C000C00394O000E00073O00122O000F003A3O00122O0010003B6O000E00106O000C3O00016O00013O00044O004A00012O00193O00013O00013O00023O00026O00F03F026O00704002264O000100025O00122O000300016O00045O00122O000500013O00042O0003002100012O000B00076O0009000800026O000900016O000A00026O000B00036O000C00046O000D8O000E00063O00202O000F000600014O000C000F6O000B3O00024O000C00036O000D00046O000E00016O000F00016O000F0006000F00102O000F0001000F4O001000016O00100006001000102O00100001001000202O0010001000014O000D00106O000C8O000A3O000200202O000A000A00024O0009000A6O00073O000100041F0003000500012O000B000300054O0012000400024O0007000300044O000D00036O00193O00017O00", GetFEnv(), ...);
